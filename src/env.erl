@@ -12,17 +12,17 @@
 %% API
 -compile(export_all).
 
-new() ->
+new() ->                                              % Return an empty env
   [].
 
-add(Id, Str, Env) ->
+add(Id, Str, Env) ->                                  % Add a variable with it's structure to an env
   [{Id, Str} | Env].
 
-lookup(_Id, []) ->
+lookup(_Id, []) ->                                    % Empty env -> no match
   false;
-lookup(Id, [{Id, Str} | _T]) ->
+lookup(Id, [{Id, Str} | _T]) ->                       % Correct ID -> return structure
   {Id, Str};
-lookup(Id, [{_,_} | T]) ->
+lookup(Id, [{_,_} | T]) ->                            % Wrong ID -> recurse
   lookup(Id, T).
 
 
