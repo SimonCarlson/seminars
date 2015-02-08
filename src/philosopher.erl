@@ -53,4 +53,4 @@ sleep(D) ->
   timer:sleep(random:uniform(D)).
 
 
-%BOMB
+%BOMWOMBMBOOBMW
